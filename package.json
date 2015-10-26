@@ -1,0 +1,15 @@
+{
+  "name": "music-player",
+  "version": "0.0.1",
+  "description": "An attempt to learn flux by building a simple music player",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "uglymunky <gabriel@uglymunky.com>",
+  "license": "MIT",
+  "private": true
+}
