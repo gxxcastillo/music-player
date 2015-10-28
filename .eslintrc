@@ -3,9 +3,15 @@
   , "rules": {
   	"comma-dangle": 0
   	, "comma-style": [2, "first"]
+  	, "eol-last": 0
   	, "func-names": 0
   	, "indent": [2, "tab"]
   	, "prefer-const": 0
-  	, "react/prop-types": 0		// Disable untill I learn how to work with react "prop-types"
+  	, "react/prop-types": 0		// Disable for now cause I don't know what "prop-types" are
+  	, "space-before-function-paren": [2, {
+			"anonymous": "always"
+			, "named": "never"
+	  	}
+  	]
   }
 }
