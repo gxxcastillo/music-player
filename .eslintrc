@@ -13,5 +13,6 @@
 			, "named": "never"
 	  	}
   	]
+    , "strict": [2, "always"]
   }
 }

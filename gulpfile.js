@@ -1,12 +1,7 @@
-let gulp = require('gulp');
-let babel = require('gulp-babel');
-let eslint = require('gulp-eslint');
+'use strict';
 
-gulp.task('build', function () {
-	return gulp.src('src/Player.js')
-		.pipe(babel())
-		.pipe(gulp.dest('dist'));
-});
+let gulp = require('gulp');
+let eslint = require('gulp-eslint');
 
 gulp.task('lint', function () {
 	return gulp.src(['src/**/*.js'])
@@ -14,5 +9,3 @@ gulp.task('lint', function () {
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
-
-gulp.task('default', ['build']);
