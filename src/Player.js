@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 
 let Hello = React.createClass({
 	displayName: 'Hello'
-	, render: function() {
+	, render: function () {
 			return React.createElement('div', null, 'Hello ', this.props.name);
 		}
 });
 
 ReactDOM.render(
-    React.createElement(Hello, {name: 'World'})
-    , document.getElementById('container')
+	React.createElement(Hello, {name: 'World'})
+	, document.getElementById('container')
 );
