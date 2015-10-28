@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 	context: __dirname + '/src'
 	, entry: './Player.js'
@@ -17,6 +19,14 @@ module.exports = {
 			}
 		]
 	}
+	, plugins: [
+		new webpack.optimize.UglifyJsPlugin({
+		    compress: {
+				warnings: false
+		    }
+		    , sourceMap: true
+		})	
+	]
 	, resolve: {
 		extensions: ['', '.js']
 		, alias: {

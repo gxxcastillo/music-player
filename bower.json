@@ -15,8 +15,9 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "demo",
+    "src",
+    "test"
   ],
   "dependencies": {
     "react": "~0.14.0"
