@@ -1,14 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-let Hello = React.createClass({
-	displayName: 'Hello'
-	, render: function () {
-			return React.createElement('div', null, 'Hello ', this.props.name);
-		}
-});
+import MusicPlayer from './MusicPlayer';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-	React.createElement(Hello, {name: 'World'})
-	, document.getElementById('app')
+	<MusicPlayer name="world" />,
+	document.getElementById('app')
 );
