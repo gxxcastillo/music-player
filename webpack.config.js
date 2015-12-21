@@ -1,37 +1,39 @@
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
-	context: __dirname + '/src'
-	, entry: './Player.js'
-	, output: {
-		path: __dirname + '/dist'
-		, filename: 'Player.js'
-	}
-	, module: {
-		loaders: [
-			{
-				test: /\.js$/
-				, loader: 'babel'
-				, exclude: /node_modules/
-				, query: {
-					modules: 'common'
-				}
-			}
-		]
-	}
-	, plugins: [
-		new webpack.optimize.UglifyJsPlugin({
-		    compress: {
-				warnings: false
-		    }
-		    , sourceMap: true
-		})	
-	]
-	, resolve: {
-		extensions: ['', '.js']
-		, alias: {
-			'react': __dirname + '/bower_components/react/react'
-			, 'react-dom': __dirname + '/bower_components/react/react-dom'
-		}
-	}
-};
+  devtool: 'cheap-module-eval-source-map',
+  entry: [
+    'webpack-hot-middleware/client',  
+    './src/app.js'
+  ],
+  output: {
+    path: path.join(__dirname, 'site/app'),
+    filename: 'app.js',
+    publicPath: '/app/'
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    loaders: [
+  		{
+  			test: /\.js$/,
+  			loaders: ['babel-loader'],
+  			exclude: /node_modules/
+  		},
+    	{
+	      test: /\.js$/,
+	      loaders: [ 'babel' ],
+	      exclude: /node_modules/,
+	    },
+	    {
+	      test: /\.json$/,
+	      loaders: [ 'json' ],
+	      exclude: /node_modules/,
+	    }
+    ]
+  }
+}

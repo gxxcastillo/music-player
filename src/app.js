@@ -10,5 +10,5 @@ let Hello = React.createClass({
 
 ReactDOM.render(
 	React.createElement(Hello, {name: 'World'})
-	, document.getElementById('container')
+	, document.getElementById('app')
 );
